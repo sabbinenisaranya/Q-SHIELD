@@ -1,0 +1,15 @@
+from cryptography.hazmat.primitives.asymmetric import ec
+
+
+def generate_key_pair():
+    """
+    Generate an elliptic-curve private/public key pair.
+    """
+
+    private_key = ec.generate_private_key(
+        ec.SECP256R1()
+    )
+
+    public_key = private_key.public_key()
+
+    return private_key, public_key
